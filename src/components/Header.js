@@ -7,7 +7,7 @@ import { grey } from '@material-ui/core/colors';
 import HomeIcon from '@material-ui/icons/Home';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import FastfoodIcon from '@material-ui/icons/Fastfood';
-import RoomIcon from '@material-ui/icons/Room';
+import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 import Hidden from '@material-ui/core/Hidden';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -239,7 +239,7 @@ const Header = () => {
                     <MenuItem onClick={handleClose}><Link to="/mas" style={{ textDecoration: 'none' }}>
                         <Button 
                             className={classes.button2}
-                            startIcon={<RoomIcon style={{ color: grey[900] }}/>}
+                            startIcon={<ContactSupportIcon style={{ color: grey[900] }}/>}
                         >
                             Más
                         </Button>
@@ -279,7 +279,7 @@ const Header = () => {
                     <Link to="/mas" style={{ textDecoration: 'none' }}>
                         <Button 
                             className={classes.button}
-                            startIcon={<RoomIcon style={{ color: grey[50] }}/>}
+                            startIcon={<ContactSupportIcon style={{ color: grey[50] }}/>}
                         >
                             Más
                         </Button>

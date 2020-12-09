@@ -1,38 +1,59 @@
 import React, { useCallback } from "react";
 import { withRouter } from "react-router";
 import {authentication} from "../firebase";
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
+import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" to="/">
+        Comida Fácil - 
+      </Link> Developed by: Alexis Carreras{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+// backgroundColor: '#F1F0F0',
 
 const useStyles = makeStyles((theme) => ({
-  contenedor: {
-    backgroundColor: '#F1F0F0',
-    height: '100vh',
+  paper: {
+    // marginTop: theme.spacing(8),
+    paddingTop: '6rem',
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     flexDirection: 'column',
-  },
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'column',
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
   },
-  button: {
-    width: '93%',
-    height: '2.7rem',
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(2),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
     backgroundColor: '#89C739',
-    color: 'white',
     '&:hover': {
       backgroundColor: '#629F13',
     },
+  },
+  campo: {
+    marginTop: '1.5rem',
   },
 }));
 
@@ -52,34 +73,72 @@ const Registar = ({ history }) => {
   }, [history]);
 
   return (
-    <div className={classes.contenedor}>
-      <Typography variant="h4" gutterBottom>
-        Crea tu cuenta
-      </Typography>
-      <form onSubmit={handleSignUp} className={classes.root} noValidate autoComplete="off">
-        
-        <TextField 
-          name="email" 
-          type="email" 
-          id="outlined-basic" 
-          label="Email" 
-          variant="outlined"
-          required />
-        
-        <TextField 
-          name="password" 
-          type="password" 
-          id="outlined-basic" 
-          label="Contraseña" 
-          variant="outlined"
-          required />
-
-        <Button variant="outlined" className={classes.button}>Registrarse</Button>
-      </form>
-      
-    </div>
-    
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Crea tu cuenta!
+        </Typography>
+        <form onSubmit={handleSignUp} className={classes.form} noValidate>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="email"
+                label="Email"
+                name="email"
+                autoComplete="email"
+                className={classes.campo}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                name="password"
+                label="Contraseña"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+                className={classes.campo}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <FormControlLabel
+                control={<Checkbox value="allowExtraEmails" color="primary" />}
+                label="He leído y acepto los terminos de uso."
+                className={classes.campo}
+              />
+            </Grid>
+          
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Crear cuenta
+          </Button>
+          <Grid container justify="flex-end">
+            <Grid item>
+              <Link to="/iniciar-sesion" variant="body2">
+                ¿Ya tienes una cuenta? Inicia sesión
+              </Link>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+      <Box mt={5}>
+        <Copyright />
+      </Box>
+    </Container>
   );
-};
+}
 
 export default withRouter(Registar); 

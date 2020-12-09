@@ -16,12 +16,10 @@ function Copyright() {
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
       <Link color="inherit" to="/">
-        Comida Fácil
-      </Link>{' '}
+        Comida Fácil -
+      </Link> Developed by: Alexis Carreras{' '}
       {new Date().getFullYear()}
       {'.'}
-      <br />
-        Developed by: Alexis Carreras
     </Typography>
   );
 }
@@ -56,6 +54,9 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(2, 0, 3),
     backgroundColor: '#89C739',
+    '&:hover': {
+      backgroundColor: '#629F13',
+    },
   },
 }));
 
