@@ -17,6 +17,7 @@ import Avatar from '@material-ui/core/Avatar';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import { deepPurple } from '@material-ui/core/colors';
 import {authentication} from '../firebase';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
     encabezado: {
@@ -119,9 +120,14 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: deepPurple[500],
     },
     avatar: {
-        marginLeft: '13rem',
+        marginLeft: '7rem',
         display: 'flex',
         alignItems: 'center',
+    },
+    bienvenido: {
+        marginRight: '1rem',
+        paddingTop: '0.4rem',
+        color: 'white',
     },
 }))
 
@@ -152,6 +158,9 @@ const Header = () => {
             if(user) {
                 return(
                     <div className={classes.avatar}>
+                        <Typography variant="subtitle1" gutterBottom className={classes.bienvenido}>
+                            Bienvenido
+                        </Typography>
                         <Button 
                             aria-controls="simple-menu" 
                             aria-haspopup="true" 

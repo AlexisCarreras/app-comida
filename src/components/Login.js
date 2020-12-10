@@ -2,37 +2,55 @@ import {authentication} from '../firebase';
 import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
 import { AuthContext } from "./Auth.js";
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
+import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="/">
+        Comida Fácil -
+      </Link> Developed by: Alexis Carreras{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
 
 const useStyles = makeStyles((theme) => ({
-  contenedor: {
-    backgroundColor: '#F1F0F0',
-    height: '100vh',
+  paper: {
+    // marginTop: theme.spacing(8),
+    paddingTop: '6rem',
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     flexDirection: 'column',
-  },
-  root: {
-    display: 'flex',
-    justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'column',
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
   },
-  button: {
-    width: '93%',
-    height: '2.7rem',
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(2),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
     backgroundColor: '#89C739',
-    color: 'white',
     '&:hover': {
       backgroundColor: '#629F13',
     },
@@ -64,18 +82,26 @@ const Login = ({ history }) => {
   }
 
   return (
-    <div className={classes.contenedor}>
-      <Typography variant="h4" gutterBottom>
-        Iniciar Sesión
-      </Typography>
-      <form onSubmit={handleLogin} className={classes.root} noValidate autoComplete="off">
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <LockOutlinedIcon />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Iniciar Sesión
+        </Typography>
+        <form onSubmit={handleLogin} className={classes.form} noValidate>
         <TextField 
-          name="email" 
-          type="email" 
-          id="outlined-basic" 
-          label="Email" 
           variant="outlined"
+          margin="normal"
           required
+          fullWidth
+          id="email"
+          label="Email"
+          name="email"
+          autoComplete="email"
+          autoFocus
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -84,16 +110,50 @@ const Login = ({ history }) => {
             ),
           }}
           />
-        <TextField name="password" 
-          type="password" 
-          id="outlined-basic" 
-          label="Contraseña" 
-          variant="outlined" 
-          required />
-        <Button type="submit" variant="outlined" className={classes.button} >Iniciar Sesión</Button>
-      </form>
-      
-    </div>
+        <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Contraseña"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <VpnKeyIcon />
+                </InputAdornment>
+              ),
+            }}
+        />
+        <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Recordar"
+        />
+         <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Iniciar Sesión
+          </Button>
+          <Grid container>
+            <Grid item>
+              <Link href="/registrate" variant="body2">
+                {"¿No tienes una cuenta? Regístrate"}
+              </Link>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+      <Box mt={8}>
+        <Copyright />
+      </Box>
+    </Container>
   );
 };
 

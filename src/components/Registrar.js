@@ -53,7 +53,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   campo: {
-    marginTop: '1.5rem',
+    marginTop: '1rem',
+  },
+  footer: {
+    marginTop: '4rem',
   },
 }));
 
@@ -127,14 +130,14 @@ const Registar = ({ history }) => {
           </Button>
           <Grid container justify="flex-end">
             <Grid item>
-              <Link to="/iniciar-sesion" variant="body2">
+              <Link href="/iniciar-sesion" variant="body2">
                 ¿Ya tienes una cuenta? Inicia sesión
               </Link>
             </Grid>
           </Grid>
         </form>
       </div>
-      <Box mt={5}>
+      <Box mt={5} className={classes.footer}>
         <Copyright />
       </Box>
     </Container>
