@@ -23,9 +23,9 @@ function createData(name, calories, fat, carbs,) {
 }
 
 const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24),
-  createData('Ice cream sandwich', 237, 9.0, 37),
-  createData('Eclair', 262, 16.0, 24),
+  createData(null, null, null, null),
+  createData(null, null, null, null),
+  createData(null, null, null, null),
 ];
 
 export default function AcccessibleTable() {
@@ -36,13 +36,12 @@ export default function AcccessibleTable() {
     <AsistenteCompra />
     <TableContainer component={Paper} className={classes.root}>
       <Table className={classes.table} aria-label="caption table">
-        <caption>A basic table example with a caption</caption>
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
+            <TableCell>Nombre</TableCell>
+            <TableCell align="right">Descripción</TableCell>
+            <TableCell align="right">Precio</TableCell>
+            <TableCell align="right">Eliminar</TableCell>
             {/* <TableCell align="right">Protein&nbsp;(g)</TableCell> */}
           </TableRow>
         </TableHead>

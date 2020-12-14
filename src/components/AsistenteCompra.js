@@ -95,7 +95,9 @@ const AsistenteCompra = () => {
                     <ShoppingCartIcon />
                 </StyledBadge>
             </IconButton></Link>
+            <Link to="/confirmarCompra" style={{ textDecoration: 'none' }}>
             <Button className={classes.siguiente} variant="outlined">Siguiente</Button>
+            </Link>
         </div>
     );
 }
