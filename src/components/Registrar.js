@@ -19,7 +19,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" to="/">
+      <Link color="inherit" href="/">
         Comida Fácil - 
       </Link> Developed by: Alexis Carreras{' '}
       {new Date().getFullYear()}
@@ -116,6 +116,7 @@ const Registar = ({ history }) => {
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                 label="He leído y acepto los terminos de uso."
                 className={classes.campo}
+                required
               />
             </Grid>
           

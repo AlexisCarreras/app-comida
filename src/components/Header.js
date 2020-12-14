@@ -120,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: deepPurple[500],
     },
     avatar: {
-        marginLeft: '7rem',
+        marginLeft: '6.5rem',
         display: 'flex',
         alignItems: 'center',
     },

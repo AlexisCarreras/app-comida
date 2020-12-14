@@ -5,7 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Button from '@material-ui/core/Button';
-import image from '../img/galeria1.jpg';
+import image from '../img/galeria2.jpg';
 
 const useStyles = makeStyles((theme) => ({
   section: {
@@ -55,10 +55,10 @@ export default function ComplexGrid() {
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography gutterBottom variant="subtitle1">
-                  Standard license
+                  Promo 1
                 </Typography>
                 <Typography variant="body2" gutterBottom>
-                  Full resolution 1920x1080 • JPEG
+                  Hamburguesa Completa + Gaseosa
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
                   ID: 1030114
@@ -71,13 +71,15 @@ export default function ComplexGrid() {
               </Grid>
             </Grid>
             <Grid item>
-              <Typography variant="subtitle1">$19.00</Typography>
+              <Typography variant="subtitle1">$200</Typography>
             </Grid>
           </Grid>
         </Grid>
       </Paper>
     </div>
-    <div className={classes.root}>
+
+    
+    {/* <div className={classes.root}>
       <Paper className={classes.paper}>
         <Grid container spacing={2}>
           <Grid item>
@@ -89,10 +91,10 @@ export default function ComplexGrid() {
             <Grid item xs container direction="column" spacing={2}>
               <Grid item xs>
                 <Typography gutterBottom variant="subtitle1">
-                  Standard license
+                  Promo 2
                 </Typography>
                 <Typography variant="body2" gutterBottom>
-                  Full resolution 1920x1080 • JPEG
+                  2 Hamburguesas Completas + Papas Fritas
                 </Typography>
                 <Typography variant="body2" color="textSecondary">
                   ID: 1030114
@@ -105,12 +107,12 @@ export default function ComplexGrid() {
               </Grid>
             </Grid>
             <Grid item>
-              <Typography variant="subtitle1">$19.00</Typography>
+              <Typography variant="subtitle1">$300</Typography>
             </Grid>
           </Grid>
         </Grid>
       </Paper>
-    </div>
+    </div> */}
     </section>
   );
 }

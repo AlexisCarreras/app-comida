@@ -66,6 +66,7 @@ const useStyles = makeStyles ({
 const AsistenteCompra = () => {
     const classes = useStyles();
 
+
     return (
         <div className={classes.encabezado}>
             <Typography variant="subtitle1" className={classes.titulo}>
@@ -85,15 +86,15 @@ const AsistenteCompra = () => {
                     <Button className={classes.button}>Bebidas</Button>
                 </Link>
             </ButtonGroup>
-            <IconButton  
+            <Link to="/cart"><IconButton  
                 aria-label="add to shopping cart" 
                 style={{ color: grey[50] }}
                 className={classes.cart}
                 >
-                <StyledBadge badgeContent={1} color="secondary">
+                <StyledBadge badgeContent={0} showZero color="secondary">
                     <ShoppingCartIcon />
                 </StyledBadge>
-            </IconButton>
+            </IconButton></Link>
             <Button className={classes.siguiente} variant="outlined">Siguiente</Button>
         </div>
     );

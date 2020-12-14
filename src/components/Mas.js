@@ -13,7 +13,7 @@ function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" to="/">
+      <Link color="inherit" href="/">
         Comida Fácil -
       </Link> Developed by: Alexis Carreras{' '}
       {new Date().getFullYear()}
@@ -68,9 +68,9 @@ export default function SignInSide() {
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">
-            Dejanos tu comentario:
+            Contanos tu experiencia con la app:
           </Typography>
-          <form className={classes.form} noValidate>
+          <form className={classes.form} action="https://formspree.io/f/mqkgydjd" method="POST" noValidate>
             <TextField
               variant="outlined"
               margin="normal"
@@ -88,7 +88,7 @@ export default function SignInSide() {
               margin="normal"
               required
               fullWidth
-              name="email"
+              name="Email"
               label="Email"
               type="email"
               id="email"
@@ -100,7 +100,7 @@ export default function SignInSide() {
                 margin="normal"
                 required
                 fullWidth
-                name="comentario"
+                name="Comentario"
                 label="Comentario"
                 id="comentario"
                 multiline
