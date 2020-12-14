@@ -8,15 +8,16 @@ import {AuthProvider} from './components/Auth';
 // import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header';
 import Inicio from './components/Inicio';
+import Promociones from './components/Promociones';
+import Menu from './components/Menu';
+import Mas from './components/Mas';
 import Registrarse from './components/Registrar';
 import Login from './components/Login';
-import Menu from './components/Menu';
-import Promociones from './components/Promociones';
+import PageNotFound from './components/PageNotFound';
 import Hamburguesas from './components/Hamburguesas';
 import Papas from './components/Papas';
 import Bebidas from './components/Bebidas';
 import Cart from './components/Cart';
-import Mas from './components/Mas';
 
 function App() {
   return (
@@ -26,41 +27,19 @@ function App() {
         <Header/>
         <Switch>
           {/* <PrivateRoute path="/" exact component={Inicio} />  */}
-          <Route path="/" exact> 
-            <Inicio />
-          </Route>
-          <Route path="/promociones" exact> 
-            <Promociones/>
-          </Route>
-          <Route path="/menu" exact> 
-            <Menu />
-          </Route>
-          <Route path="/mas" exact> 
-            <Mas/>
-          </Route>
-          <Route path="/registrate" exact> 
-            <Registrarse />
-          </Route>
-          <Route path="/iniciar-sesion" exact> 
-            <Login />
-          </Route>
+          <Route exact path="/" component={Inicio}/>
+          <Route exact path="/promociones" component={Promociones}/>
+          <Route exact path="/menu" component={Menu}/>
+          <Route exact path="/mas" component={Mas}/>
+          <Route exact path="/registrate" component={Registrarse}/>
+          <Route exact path="/iniciar-sesion" component={Login}/>
+          <Route component={PageNotFound}/>
 
-        
-          <Route path="/promociones" exact>
-            <Promociones/>
-          </Route>
-          <Route path="/hamburguesas" exact>
-            <Hamburguesas/>
-          </Route>
-          <Route path="/papas" exact>
-            <Papas/>
-          </Route>
-          <Route path="/bebidas" exact>
-            <Bebidas/>
-          </Route>
-          <Route path="/cart" exact>
-            <Cart/>
-          </Route>
+          <Route exact path="/promociones" component={Promociones}/>
+          <Route exact path="/hamburguesas" component={Hamburguesas}/>
+          <Route exact path="/papas" component={Papas}/>
+          <Route exact path="/bebidas" component={Bebidas}/>
+          <Route exact path="/cart" component={Cart}/>
 
           <Route path="/menu" exact>
             <Promociones/>
@@ -69,11 +48,9 @@ function App() {
             <Bebidas/>
           </Route>
 
-
         </Switch>
       </div>
       </Router>
-
     </AuthProvider>
   );
 }
