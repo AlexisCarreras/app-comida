@@ -8,6 +8,8 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 
 function Copyright() {
   return (
@@ -39,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: '5.8rem',
+    marginTop: '5.2rem',
   },
   avatar: {
     margin: theme.spacing(1),
@@ -48,6 +50,12 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1.8),
+  },
+  check: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    marginRight: '2.5rem',
+    marginLeft: '2.5rem',
   },
   submit: {
     margin: theme.spacing(2, 0, 3),
@@ -67,8 +75,11 @@ export default function SignInSide() {
       <Grid item xs={false} sm={4} md={7} className={classes.image} />
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
-          <Typography component="h1" variant="h5">
+          <Typography component="h1" variant="h6">
             Contanos tu experiencia con la app:
+          </Typography>
+          <Typography component="h1" variant="subtitle1">
+            Ayudanos a mejorar
           </Typography>
           <form className={classes.form} action="https://formspree.io/f/mqkgydjd" method="POST" noValidate>
             <TextField
@@ -95,6 +106,23 @@ export default function SignInSide() {
               autoComplete="email"
               size= "small"
             />
+            <div className={classes.check}>
+            <FormControlLabel
+              control={<Checkbox value="Mala" color="primary" />}
+              label="Mala"
+              name="Experiencia"
+            />
+            <FormControlLabel
+              control={<Checkbox value="Buena" color="primary" />}
+              label="Buena"
+              name="Experiencia"
+            /> 
+            <FormControlLabel
+              control={<Checkbox value="Muy buena" color="primary" />}
+              label="Muy buena"
+              name="Experiencia"
+            />
+            </div>
              <TextField
                 variant="outlined"
                 margin="normal"
@@ -116,7 +144,7 @@ export default function SignInSide() {
             >
               Enviar
             </Button>
-            <Box mt={5}>
+            <Box>
               <Copyright />
             </Box>
           </form>

@@ -1,18 +1,31 @@
 import React from 'react';
 import { makeStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { grey } from '@material-ui/core/colors';
+import Link from '@material-ui/core/Link';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
 
 const useStyles = makeStyles ({
     root: {
         height: '12.1vh',
-        backgroundColor: '#333',
+        backgroundColor: '#222',
         
+    },
+    icons: {
+        marginRight: '32rem',
+        marginLeft: '32rem',
+        paddingTop: '0.7rem',
+        display: 'flex',
+        justifyContent: 'space-between',
     },
     text: {
         color: 'white',
         display: 'flex',
         justifyContent: 'center',
-        paddingTop: '3rem',
+        paddingTop: '0.7rem',
     },
 })
 
@@ -20,11 +33,22 @@ const Footer = () => {
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-        <Typography className={classes.text} variant="caption" display="block" gutterBottom>
-            © Derechos Reservados 2020 - Alexis Carreras
-        </Typography>
+        <section className={classes.root}>
+        <div className={classes.icons}>
+        <FacebookIcon style={{ color: grey[50] }} />
+        <InstagramIcon style={{ color: grey[50] }} />
+        <TwitterIcon style={{ color: grey[50] }} />
+        <SubscriptionsIcon style={{ color: grey[50] }} />
         </div>
+        <Typography variant="body2" className={classes.text} align="center">
+            {'Copyright ©  '}
+            <Link color="inherit" href="/">
+                 Comida Fácil - 
+            </Link> Developed by: Alexis Carreras{' '}
+            {new Date().getFullYear()}
+            {'.'}
+        </Typography>
+        </section>
 
     );
 }
