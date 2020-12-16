@@ -8,7 +8,7 @@ import {AuthProvider} from './components/Auth';
 import PrivateRoute from './components/PrivateRoute';
 import Header from './components/Header';
 import Inicio from './components/Inicio';
-import Promociones from './components/Promociones';
+import Productos from './components/Productos';
 import Menu from './components/Menu';
 import Mas from './components/Mas';
 import Registrarse from './components/Registrar';
@@ -28,20 +28,20 @@ function App() {
         <Header/>
         <Switch>
           <Route exact path="/" component={Inicio}/>
-          <Route exact path="/promociones" component={Promociones}/>
+          <Route exact path="/productos" component={Productos}/>
           <Route exact path="/menu" component={Menu}/>
           <Route exact path="/mas" component={Mas}/>
           <Route exact path="/registrate" component={Registrarse}/>
           <Route exact path="/iniciar-sesion" component={Login}/>
 
-          <Route exact path="/promociones" component={Promociones}/>
+          <Route exact path="/productos" component={Productos}/>
           <Route exact path="/hamburguesas" component={Hamburguesas}/>
           <Route exact path="/papas" component={Papas}/>
           <Route exact path="/bebidas" component={Bebidas}/>
           <Route exact path="/cart" component={Cart}/>
 
           <Route exact path="/menu" >
-            <Promociones/>
+            <Productos/>
             <Hamburguesas/>
             <Papas/>
             <Bebidas/>

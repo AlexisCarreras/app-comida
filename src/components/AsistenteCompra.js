@@ -66,14 +66,13 @@ const useStyles = makeStyles ({
 const AsistenteCompra = () => {
     const classes = useStyles();
 
-
     return (
         <div className={classes.encabezado}>
             <Typography variant="subtitle1" className={classes.titulo}>
                 Asistente de compra
             </Typography>
             <ButtonGroup className={classes.botones} size="small" variant="text" aria-label="text primary button group">
-                <Link to="/promociones" style={{ textDecoration: 'none' }}>
+                <Link to="/productos" style={{ textDecoration: 'none' }}>
                     <Button className={classes.button}>Promociones</Button>
                 </Link>
                 <Link to="/hamburguesas" style={{ textDecoration: 'none' }}>
