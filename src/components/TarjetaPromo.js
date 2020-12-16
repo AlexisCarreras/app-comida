@@ -83,14 +83,18 @@ const useStyles = makeStyles((theme) => ({
 
 const PAGE_PROMOCIONES = 'promociones';
 const PAGE_HAMBURGUESAS = 'hamburguesas';
+const PAGE_PAPAS = 'papas';
+const PAGE_BEBIDAS = 'bebidas';
 const PAGE_CART = 'cart';
 
 
 export default function ComplexGrid() {
   const classes = useStyles();
   const [cart, setCart] = useState ([]);
-  const [page, setPage] = useState ([PAGE_PROMOCIONES, PAGE_HAMBURGUESAS]);
-//-----------------------------------------------------------------------------
+  const [page, setPage] = useState ([PAGE_PROMOCIONES, PAGE_HAMBURGUESAS, PAGE_PAPAS, PAGE_BEBIDAS]);
+
+//---------------Funciones para eliminar del carrito--------------------------
+
   const removePromoCart = (eliminarPromocion) => {
     setCart(cart.filter(promocion => promocion !== eliminarPromocion))
   }
@@ -98,7 +102,17 @@ export default function ComplexGrid() {
   const removeBurgerCart = (eliminarHamburguesa) => {
     setCart(cart.filter(hamburguesa => hamburguesa !== eliminarHamburguesa))
   }
-//-----------------------------------------------------------------------------
+
+  const removePapasCart = (eliminarPapa) => {
+    setCart(cart.filter(papa => papa !== eliminarPapa))
+  }
+
+  const removeBebidasCart = (eliminarBebida) => {
+    setCart(cart.filter(bebida => bebida !== eliminarBebida))
+  }
+
+//---------------Funciones para agregar al carrito--------------------------
+
   const addToCartPromo = (promocion) => {
     // console.log("Funcion de agregar al carrito");
     setCart([...cart, { ...promocion }]);
@@ -107,8 +121,18 @@ export default function ComplexGrid() {
     // console.log("Funcion de agregar al carrito");
     setCart([...cart, { ...hamburguesa }]);
   };
-//-----------------------------------------------------------------------------
 
+  const addToCartPapas = (papa) => {
+    // console.log("Funcion de agregar al carrito");
+    setCart([...cart, { ...papa }]);
+  };
+
+  const addToCartBebidas = (bebida) => {
+    // console.log("Funcion de agregar al carrito");
+    setCart([...cart, { ...bebida }]);
+  };
+
+//---------------Función para pasar a otra página--------------------------
 
   const navegarA = (nextPage) => {
     setPage(nextPage);
@@ -132,14 +156,16 @@ export default function ComplexGrid() {
               >
                 Hamburguesas
               </Button>
-                
-
-                <Link to="/papas" style={{ textDecoration: 'none' }}>
-                    <Button className={classes.button}>Papas</Button>
-                </Link>
-                <Link to="/bebidas" style={{ textDecoration: 'none' }}>
-                    <Button className={classes.button}>Bebidas</Button>
-                </Link>
+              <Button 
+                onClick={() => navegarA(PAGE_PAPAS)} className={classes.button}
+              >
+                Papas
+              </Button>
+              <Button 
+                onClick={() => navegarA(PAGE_BEBIDAS)} className={classes.button}
+              >
+                Bebidas
+              </Button>
             </ButtonGroup>
             <IconButton 
                 onClick={() => navegarA(PAGE_CART)} 
@@ -161,11 +187,19 @@ export default function ComplexGrid() {
         {page === PAGE_HAMBURGUESAS && (
             <Hamburguesas addToCartBurger={addToCartBurger} />
         )}
+        {page === PAGE_PAPAS && (
+            <Papas addToCartPapas={addToCartPapas} />
+        )}
+        {page === PAGE_BEBIDAS && (
+            <Bebidas addToCartBebidas={addToCartBebidas} />
+        )}
         {page === PAGE_CART && (
           <Cart 
             cart={cart} 
             removePromoCart={removePromoCart}
             removeBurgerCart={removeBurgerCart}
+            removePapasCart={removePapasCart}
+            removeBebidasCart={removeBebidasCart}
           />
         )}
     </section>

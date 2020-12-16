@@ -8,34 +8,37 @@ import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   productos: {
-      paddingTop: '6rem',
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-    },
-    img: {
-      display: 'block',
-      width: '100%',
-      maxHeight: '100%',
-    },
-    producto: {
-      padding: '40px',
-    },
-    paper: {
-      padding: theme.spacing(2),
-      // margin: 'auto',
-      // marginLeft: '5rem',
-      maxWidth: 400,
-    },
-    image: {
-      width: 128,
-      height: 128,
-    },
-    agregar: {
-      backgroundColor: '#FFD900',
-    },
+    paddingTop: '6rem',
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+  },
+  producto: {
+    padding: '40px',
+  },
+  paper: {
+    padding: theme.spacing(2),
+    marginLeft: '3.5rem',
+    maxWidth: 400,
+  },
+  image: {
+    width: 128,
+    height: 128,
+  },
+  img: {
+    margin: 'auto',
+    display: 'block',
+    maxWidth: '100%',
+    maxHeight: '100%',
+  },
+  agregar: {
+    backgroundColor: '#FFD900',
+    '&:hover': {
+      backgroundColor: '#D8B800',
+    }
+  },
 }))
 
-export default function Cart({ cart, removePromoCart, removeBurgerCart }){
+export default function Cart({ cart, removePromoCart, removeBurgerCart, removePapasCart, removeBebidasCart }){
   const classes = useStyles();
 
   return (

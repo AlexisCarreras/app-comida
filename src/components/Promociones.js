@@ -12,26 +12,29 @@ const useStyles = makeStyles((theme) => ({
         display: 'grid',
         gridTemplateColumns: '1fr 1fr',
       },
-      img: {
-        display: 'block',
-        width: '100%',
-        maxHeight: '100%',
-      },
       producto: {
         padding: '40px',
       },
       paper: {
         padding: theme.spacing(2),
-        // margin: 'auto',
-        // marginLeft: '5rem',
+        marginLeft: '3.5rem',
         maxWidth: 400,
       },
       image: {
         width: 128,
         height: 128,
       },
+      img: {
+        margin: 'auto',
+        display: 'block',
+        maxWidth: '100%',
+        maxHeight: '100%',
+      },
       agregar: {
         backgroundColor: '#FFD900',
+        '&:hover': {
+          backgroundColor: '#D8B800',
+        }
       },
 }))
 
@@ -41,27 +44,27 @@ export default function Promociones({ addToCartPromo }) {
     const [productos] = useState ([
         {
           nombre: 'Promo 1',
-          descripcion: 'Hamburguesa Completa + Gaseosa',
-          precio: '$200',
-          img: 'https://images.unsplash.com/photo-1564849012987-56a988d14596?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=713&q=80',
+          descripcion: 'Hamburguesa Súper + Papas + Gaseosa',
+          precio: '$500',
+          img: 'https://images.unsplash.com/photo-1607013401178-f9c15ab575bb?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80',
         },
         {
           nombre: 'Promo 2',
-          descripcion: '2 Hamburguesas Completas + Papas Fritas',
-          precio: '$300',
-          img: 'https://images.unsplash.com/photo-1428660386617-8d277e7deaf2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80',
+          descripcion: 'Hamburguesa con lechuga y tomate + Papas Fritas',
+          precio: '$380',
+          img: 'https://images.unsplash.com/photo-1551782450-a2132b4ba21d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80',
         },
         {
           nombre: 'Promo 3',
-          descripcion: 'Hamburguesa Completa + Gaseosa',
-          precio: '$200',
-          img: 'https://images.unsplash.com/photo-1564849012987-56a988d14596?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=713&q=80',
+          descripcion: '3 Hamburguesas Completas (ingredientes a elección)',
+          precio: '$700',
+          img: 'https://images.unsplash.com/photo-1585730315692-5252e57d4b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=626&q=80',
         },
         {
           nombre: 'Promo 4',
-          descripcion: '2 Hamburguesas Completas + Papas Fritas',
-          precio: '$300',
-          img: 'https://images.unsplash.com/photo-1428660386617-8d277e7deaf2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80',
+          descripcion: 'Hamburguesa con lechuga, tomate y cheddar + Bebida',
+          precio: '$320',
+          img: 'https://images.unsplash.com/photo-1551615593-ef5fe247e8f7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=780&q=80',
         },
         
       ]);
@@ -102,7 +105,7 @@ export default function Promociones({ addToCartPromo }) {
                     className={classes.agregar} 
                     variant="outlined"
                     >
-                    Agregar +
+                    Agregar
                   </Button>
                   </Typography>
                 </Grid>
