@@ -5,6 +5,13 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { Button } from '@material-ui/core';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     productos: {
@@ -31,15 +38,37 @@ const useStyles = makeStyles((theme) => ({
         maxHeight: '100%',
       },
       agregar: {
+        marginRight: '1rem',
         backgroundColor: '#FFD900',
         '&:hover': {
           backgroundColor: '#D8B800',
         }
       },
+      verMas: {
+        color: 'whiteSmoke',
+        backgroundColor: '#EB5D2F',
+        '&:hover': {
+          backgroundColor: '#C4380A',
+        }
+      },
+      botones: {
+        display: 'flex',
+      },
 }))
 
 export default function Promociones({ addToCartPromo }) {
     const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+
+    const handleClose = () => {
+      setOpen(false);
+    };
 
     const [productos] = useState ([
         {
@@ -95,10 +124,10 @@ export default function Promociones({ addToCartPromo }) {
                     {producto.descripcion}
                   </Typography>
                   <Typography variant="body2" color="textSecondary">
-                    ID: 1030114
+                    ID: Promociones
                   </Typography>
                 </Grid>
-                <Grid item>
+                <Grid item className={classes.botones}>
                   <Typography variant="body2" style={{ cursor: 'pointer' }}>
                   <Button 
                     onClick={() => addToCartPromo(producto)}
@@ -108,6 +137,40 @@ export default function Promociones({ addToCartPromo }) {
                     Agregar
                   </Button>
                   </Typography>
+
+                  <Button 
+                    onClick={handleClickOpen}
+                    className={classes.verMas}
+                    variant="outlined"  
+                  >
+                    Ver Foto
+                  </Button>
+                  <Dialog
+                    fullScreen={fullScreen}
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="responsive-dialog-title"
+                  >
+                    <DialogTitle id="responsive-dialog-title">{"Foto"}</DialogTitle>
+                    <DialogContent>
+                      <DialogContentText>
+                      <Typography gutterBottom variant="subtitle1">
+                        {producto.nombre}
+                      </Typography>
+                      <img 
+                        className= {classes.img} 
+                        alt= {producto.nombre} 
+                        src= {producto.img} 
+                      />
+                      </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                      <Button onClick={handleClose} color="primary" autoFocus>
+                        Cerrar
+                      </Button>
+                    </DialogActions>
+                  </Dialog>
+
                 </Grid>
               </Grid>
               <Grid item>

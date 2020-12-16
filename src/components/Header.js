@@ -166,7 +166,7 @@ const Header = () => {
                             aria-haspopup="true" 
                             onClick={handleClick}
                         >
-                            <Avatar className={classes.purple}>AC</Avatar>
+                            <Avatar src="/broken-image.jpg" />
                             <ArrowDropDownIcon style={{ color: grey[50] }}/>
                         </Button>
                         <Menu
@@ -176,8 +176,8 @@ const Header = () => {
                             open={Boolean(anchorEl)}
                             onClose={handleClose}
                         >
-                            <MenuItem onClick={handleClose} className={classes.menuBtn}>Profile</MenuItem>
-                            <MenuItem onClick={handleClose} className={classes.menuBtn}>My account</MenuItem>
+                            <MenuItem onClick={handleClose} className={classes.menuBtn}>Mi Perfil</MenuItem>
+                            <MenuItem onClick={handleClose} className={classes.menuBtn}>Mis Pedidos</MenuItem>
                             <MenuItem onClick={handleClose, handleSignOut} className={classes.menuBtn}>
                                 <Link to="/iniciar-sesion">Cerrar Sesión</Link>
                             </MenuItem>

@@ -5,6 +5,13 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { Button } from '@material-ui/core';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   productos: {
@@ -31,39 +38,61 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: '100%',
   },
   agregar: {
+    marginRight: '1rem',
     backgroundColor: '#FFD900',
     '&:hover': {
       backgroundColor: '#D8B800',
     }
   },
+  verMas: {
+    color: 'whiteSmoke',
+    backgroundColor: '#EB5D2F',
+    '&:hover': {
+      backgroundColor: '#C4380A',
+    }
+  },
+  botones: {
+    display: 'flex',
+  },
 }))
 
 export default function Papas({ addToCartPapas }) {
     const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+
+    const handleClose = () => {
+      setOpen(false);
+    };
 
     const [productos] = useState ([
       {
-        nombre: 'Promo 5',
-        descripcion: '2 Hamburguesas Completas + Papas Fritas',
-        precio: '$300',
+        nombre: 'Papas con verdeo',
+        descripcion: '1/4 de papas, con verdeo y sal para agregar',
+        precio: '$100',
         img: 'https://images.unsplash.com/photo-1529589510304-b7e994a92f60?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
       },
       {
-        nombre: 'Promo 6',
-        descripcion: '2 Hamburguesas Completas + Papas Fritas',
-        precio: '$300',
+        nombre: 'Papas con Salsa',
+        descripcion: '1/4 de papas condimentadas y salsa de tomate',
+        precio: '$115',
         img: 'https://images.unsplash.com/photo-1518013431117-eb1465fa5752?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
       },
       {
-        nombre: 'Promo 7',
-        descripcion: 'Hamburguesa Completa + Gaseosa',
-        precio: '$200',
+        nombre: 'Papas picantes',
+        descripcion: '1/4 de papas con condimento picante',
+        precio: '$105',
         img: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80',
       },
       {
-        nombre: 'Promo 8',
-        descripcion: 'Hamburguesa Completa + Gaseosa',
-        precio: '$200',
+        nombre: 'Papas Simples',
+        descripcion: '1/4 de papas simples y sal para agregar',
+        precio: '$90',
         img: 'https://images.unsplash.com/photo-1500751891669-23b2f9577d86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
       },  
     ]);
@@ -94,10 +123,10 @@ export default function Papas({ addToCartPapas }) {
                     {producto.descripcion}
                   </Typography>
                   <Typography variant="body2" color="textSecondary">
-                    ID: 1030114
+                    ID: Papas Fritas
                   </Typography>
                 </Grid>
-                <Grid item>
+                <Grid item className={classes.botones}>
                   <Typography variant="body2" style={{ cursor: 'pointer' }}>
                   <Button 
                     onClick={() => addToCartPapas(producto)}
@@ -107,6 +136,40 @@ export default function Papas({ addToCartPapas }) {
                     Agregar
                   </Button>
                   </Typography>
+
+                  <Button 
+                    onClick={handleClickOpen}
+                    className={classes.verMas}
+                    variant="outlined"  
+                  >
+                    Ver Foto
+                  </Button>
+                  <Dialog
+                    fullScreen={fullScreen}
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="responsive-dialog-title"
+                  >
+                    <DialogTitle id="responsive-dialog-title">{"Foto"}</DialogTitle>
+                    <DialogContent>
+                      <DialogContentText>
+                      <Typography gutterBottom variant="subtitle1">
+                        {producto.nombre}
+                      </Typography>
+                      <img 
+                        className= {classes.img} 
+                        alt= {producto.nombre} 
+                        src= {producto.img} 
+                      />
+                      </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                      <Button onClick={handleClose} color="primary" autoFocus>
+                        Cerrar
+                      </Button>
+                    </DialogActions>
+                  </Dialog>
+
                 </Grid>
               </Grid>
               <Grid item>

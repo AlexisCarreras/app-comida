@@ -21,6 +21,17 @@ const useStyles = makeStyles ({
         display: 'flex',
         justifyContent: 'space-between',
     },
+    icono: {
+        color: 'grey',
+        '&:hover': {
+            color: 'white',
+        },
+    },
+    nombre: {
+        '&:hover': {
+            color: 'white',
+        },
+    },
     text: {
         // color: 'white',
         display: 'flex',
@@ -35,14 +46,14 @@ const Footer = () => {
     return (
         <section className={classes.root}>
         <div className={classes.icons}>
-        <FacebookIcon style={{ color: grey[500] }} />
-        <InstagramIcon style={{ color: grey[500] }} />
-        <TwitterIcon style={{ color: grey[500] }} />
-        <SubscriptionsIcon style={{ color: grey[500] }} />
+        <Link href=""><FacebookIcon className={classes.icono} /></Link>
+        <Link href=""><InstagramIcon className={classes.icono} /></Link>
+        <Link href=""><TwitterIcon className={classes.icono} /></Link>
+        <Link href=""><SubscriptionsIcon className={classes.icono} /></Link>
         </div>
         <Typography variant="body2" className={classes.text} style={{ color: grey[500] }} align="center">
             {'Copyright ©  '}
-            <Link color="inherit" href="/">
+            <Link color="inherit" href="/" className={classes.nombre} style={{ textDecoration: 'none' }}>
                  Comida Fácil - 
             </Link> Developed by: Alexis Carreras{' '}
             {new Date().getFullYear()}
