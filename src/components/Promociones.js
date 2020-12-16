@@ -97,6 +97,8 @@ export default function Promociones({ addToCartPromo }) {
         
       ]);
 
+
+
     return (
     <>
        <div className={classes.productos}>

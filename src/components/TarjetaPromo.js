@@ -186,8 +186,8 @@ export default function ComplexGrid() {
             <Link to="/confirmarCompra" style={{ textDecoration: 'none' }}>
             <Button className={classes.siguiente} variant="outlined">Siguiente</Button>
             </Link>
-      </div>
-      <Typography className={classes.subtitle1} variant="h6" gutterBottom>
+    </div>
+      <Typography className={classes.subtitle1} variant="subtitle1" gutterBottom>
         Navega por el asistente de compra.
       </Typography>
         {page === PAGE_PROMOCIONES && (

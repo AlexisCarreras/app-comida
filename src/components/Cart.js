@@ -35,13 +35,19 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#D8B800',
     }
   },
+  total: {
+    marginBottom: '1rem',
+  },
 }))
 
-export default function Cart({ cart, setCart, removePromoCart, removeBurgerCart, removePapasCart, removeBebidasCart }){
-  const classes = useStyles();
+export default function Cart({ cart, removePromoCart, removeBurgerCart, removePapasCart, removeBebidasCart }){
+  const classes = useStyles(); 
 
   return (
     <>
+      <Typography className={classes.total} variant="body2" gutterBottom>
+        Total: 
+      </Typography>
       <div className={classes.productos}>
       {cart.map((producto, index) => (
         <div className={classes.producto} key={index}>
