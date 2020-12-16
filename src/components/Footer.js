@@ -22,7 +22,7 @@ const useStyles = makeStyles ({
         justifyContent: 'space-between',
     },
     text: {
-        color: 'white',
+        // color: 'white',
         display: 'flex',
         justifyContent: 'center',
         paddingTop: '0.7rem',
@@ -35,12 +35,12 @@ const Footer = () => {
     return (
         <section className={classes.root}>
         <div className={classes.icons}>
-        <FacebookIcon style={{ color: grey[50] }} />
-        <InstagramIcon style={{ color: grey[50] }} />
-        <TwitterIcon style={{ color: grey[50] }} />
-        <SubscriptionsIcon style={{ color: grey[50] }} />
+        <FacebookIcon style={{ color: grey[500] }} />
+        <InstagramIcon style={{ color: grey[500] }} />
+        <TwitterIcon style={{ color: grey[500] }} />
+        <SubscriptionsIcon style={{ color: grey[500] }} />
         </div>
-        <Typography variant="body2" className={classes.text} align="center">
+        <Typography variant="body2" className={classes.text} style={{ color: grey[500] }} align="center">
             {'Copyright ©  '}
             <Link color="inherit" href="/">
                  Comida Fácil - 

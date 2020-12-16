@@ -18,8 +18,7 @@ const Menu = () => {
 
   return (
     <div className={classes.root}>
-      <AsistenteCompra/>
-      <div className={classes.separacion}></div>
+      {/* <AsistenteCompra/> */}
       <TarjetaPromo/>
     </div>
   );
