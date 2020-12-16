@@ -10,6 +10,7 @@ import Header from './components/Header';
 import Inicio from './components/Inicio';
 import Productos from './components/Productos';
 import Menu from './components/Menu';
+import Nosotros from './components/Nosotros';
 import Mas from './components/Mas';
 import Registrarse from './components/Registrar';
 import Login from './components/Login';
@@ -28,8 +29,8 @@ function App() {
         <Header/>
         <Switch>
           <Route exact path="/" component={Inicio}/>
-          <Route exact path="/productos" component={Productos}/>
           <Route exact path="/menu" component={Menu}/>
+          <Route exact path="/nosotros" component={Nosotros}/>
           <Route exact path="/mas" component={Mas}/>
           <Route exact path="/registrate" component={Registrarse}/>
           <Route exact path="/iniciar-sesion" component={Login}/>

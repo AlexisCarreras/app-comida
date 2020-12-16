@@ -9,25 +9,25 @@ const images = [
     url: 'https://images.unsplash.com/photo-1428660386617-8d277e7deaf2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80',
     title: 'Promociones',
     width: '20%',
-    link: '/promociones',
+    link: '/productos',
   },
   {
     url: 'https://images.unsplash.com/photo-1564849012987-56a988d14596?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=713&q=80',
     title: 'Hamburguesas',
     width: '20%',
-    link: '/hamburguesas',
+    link: '/productos',
   },
   {
     url: 'https://images.unsplash.com/photo-1600339240932-226cff938b4f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
     title: 'Papas Fritas',
     width: '20%',
-    link: '/papas',
+    link: '/productos',
   },
   {
     url: 'https://images.unsplash.com/photo-1600202117804-212904e9680e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
-    title: 'Bebidas',
+    title: 'productos',
     width: '20%',
-    link: '/bebidas',
+    link: '/productos',
   },
 ];
 

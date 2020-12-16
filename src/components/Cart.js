@@ -8,7 +8,6 @@ import { Button } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   productos: {
-    paddingTop: '6rem',
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
   },
@@ -38,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-export default function Cart({ cart, removePromoCart, removeBurgerCart, removePapasCart, removeBebidasCart }){
+export default function Cart({ cart, setCart, removePromoCart, removeBurgerCart, removePapasCart, removeBebidasCart }){
   const classes = useStyles();
 
   return (

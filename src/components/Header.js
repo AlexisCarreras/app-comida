@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { grey } from '@material-ui/core/colors';
 import HomeIcon from '@material-ui/icons/Home';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
-import FastfoodIcon from '@material-ui/icons/Fastfood';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 import Hidden from '@material-ui/core/Hidden';
 import Menu from '@material-ui/core/Menu';
@@ -237,12 +237,12 @@ const Header = () => {
                             Menu
                         </Button>
                     </Link></MenuItem>
-                    <MenuItem onClick={handleClose}><Link to="/promociones" style={{ textDecoration: 'none' }}>
+                    <MenuItem onClick={handleClose}><Link to="/nosotros" style={{ textDecoration: 'none' }}>
                         <Button 
                             className={classes.button2}
-                            startIcon={<FastfoodIcon style={{ color: grey[900] }}/>}
+                            startIcon={<PeopleAltIcon style={{ color: grey[900] }}/>}
                         >
-                            Promociones
+                            Nosotros
                         </Button>
                     </Link></MenuItem>
                     <MenuItem onClick={handleClose}><Link to="/mas" style={{ textDecoration: 'none' }}>
@@ -277,12 +277,12 @@ const Header = () => {
                             Menu
                         </Button>
                     </Link>
-                    <Link to="/promociones" style={{ textDecoration: 'none' }}>
+                    <Link to="/nosotros" style={{ textDecoration: 'none' }}>
                         <Button 
                             className={classes.button}
-                            startIcon={<FastfoodIcon style={{ color: grey[50] }}/>}
+                            startIcon={<PeopleAltIcon style={{ color: grey[50] }}/>}
                         >
-                            Promociones
+                            Nosotros
                         </Button>
                     </Link>
                     <Link to="/mas" style={{ textDecoration: 'none' }}>

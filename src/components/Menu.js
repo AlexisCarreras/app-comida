@@ -1,19 +1,19 @@
 import React from 'react';
 import { makeStyles} from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import AsistenteCompra from './AsistenteCompra';
+// import AsistenteCompra from './AsistenteCompra';
 import CardMenu from './CardMenu';
 import Footer from './Footer';
 
 const useStyles = makeStyles ({
     subtitle: {
-        paddingTop: '9rem',
+        paddingTop: '7.6rem',
         display: 'flex',
         justifyContent: 'center',
     },
     subtitle1: {
         paddingTop: '2rem',
-        marginBottom: '2rem',
+        marginBottom: '3.4rem',
         display: 'flex',
         justifyContent: 'center',
         color: '#752A07',
@@ -28,9 +28,9 @@ const Menu = () => {
 
     return (
             <div>
-                <AsistenteCompra />
+                {/* <AsistenteCompra /> */}
                     <Typography className={classes.subtitle} variant="h6" gutterBottom>
-                        Por favor, elige una categoría:
+                        Éstas son las categorías disponibles:
                     </Typography>
                     <div className={classes.section}>
                         <CardMenu/>

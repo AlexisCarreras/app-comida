@@ -70,6 +70,12 @@ const useStyles = makeStyles((theme) => ({
           backgroundColor: '#629F13',
         },
   },
+  subtitle1: {
+    paddingTop: '9rem',
+    display: 'flex',
+    justifyContent: 'center',
+    color: '#752A07',
+},
   section: {
       display: 'flex',
       justifyContent:'space-around',
@@ -181,6 +187,9 @@ export default function ComplexGrid() {
             <Button className={classes.siguiente} variant="outlined">Siguiente</Button>
             </Link>
       </div>
+      <Typography className={classes.subtitle1} variant="h6" gutterBottom>
+        Navega por el asistente de compra.
+      </Typography>
         {page === PAGE_PROMOCIONES && (
             <Promociones addToCartPromo={addToCartPromo} />
         )}

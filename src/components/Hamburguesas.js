@@ -15,7 +15,6 @@ import { useTheme } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   productos: {
-    paddingTop: '6rem',
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
   },
