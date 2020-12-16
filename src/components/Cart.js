@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }))
 
-export default function Cart({ cart, removeFromCart }){
+export default function Cart({ cart, removePromoCart, removeBurgerCart }){
   const classes = useStyles();
 
   return (
@@ -70,7 +70,7 @@ export default function Cart({ cart, removeFromCart }){
               <Grid item>
                 <Typography variant="body2" style={{ cursor: 'pointer' }}>
                 <Button 
-                  onClick={() => removeFromCart(producto)}
+                  onClick={() => removePromoCart(producto)}
                   className={classes.agregar} 
                   variant="outlined"
                   >

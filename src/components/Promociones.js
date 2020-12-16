@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
       },
 }))
 
-export default function Promociones({ addToCart }) {
+export default function Promociones({ addToCartPromo }) {
     const classes = useStyles();
 
     const [productos] = useState ([
@@ -98,7 +98,7 @@ export default function Promociones({ addToCart }) {
                 <Grid item>
                   <Typography variant="body2" style={{ cursor: 'pointer' }}>
                   <Button 
-                    onClick={() => addToCart(producto)}
+                    onClick={() => addToCartPromo(producto)}
                     className={classes.agregar} 
                     variant="outlined"
                     >

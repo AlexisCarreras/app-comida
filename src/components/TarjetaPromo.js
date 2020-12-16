@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import Promociones from './Promociones';
+import Hamburguesas from './Hamburguesas';
+import Papas from './Papas';
+import Bebidas from './Bebidas';
 import Cart from './Cart';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -78,23 +81,34 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const PAGE_PRODUCTOS = 'productos';
+const PAGE_PROMOCIONES = 'promociones';
+const PAGE_HAMBURGUESAS = 'hamburguesas';
 const PAGE_CART = 'cart';
 
 
 export default function ComplexGrid() {
   const classes = useStyles();
   const [cart, setCart] = useState ([]);
-  const [page, setPage] = useState (PAGE_PRODUCTOS);
-
-  const removeFromCart = (eliminarProducto) => {
-    setCart(cart.filter(producto => producto !== eliminarProducto))
+  const [page, setPage] = useState ([PAGE_PROMOCIONES, PAGE_HAMBURGUESAS]);
+//-----------------------------------------------------------------------------
+  const removePromoCart = (eliminarPromocion) => {
+    setCart(cart.filter(promocion => promocion !== eliminarPromocion))
   }
 
-  const addToCart = (producto) => {
-    console.log("Funcion de agregar al carrito");
-    setCart([...cart, { ...producto }]);
+  const removeBurgerCart = (eliminarHamburguesa) => {
+    setCart(cart.filter(hamburguesa => hamburguesa !== eliminarHamburguesa))
+  }
+//-----------------------------------------------------------------------------
+  const addToCartPromo = (promocion) => {
+    // console.log("Funcion de agregar al carrito");
+    setCart([...cart, { ...promocion }]);
   };
+  const addToCartBurger = (hamburguesa) => {
+    // console.log("Funcion de agregar al carrito");
+    setCart([...cart, { ...hamburguesa }]);
+  };
+//-----------------------------------------------------------------------------
+
 
   const navegarA = (nextPage) => {
     setPage(nextPage);
@@ -109,14 +123,17 @@ export default function ComplexGrid() {
             <ButtonGroup className={classes.botones} size="small" variant="text" aria-label="text primary button group">
               
               <Button  
-                onClick={() => navegarA(PAGE_PRODUCTOS)} className={classes.button}
+                onClick={() => navegarA(PAGE_PROMOCIONES)} className={classes.button}
               >
                 Promociones
               </Button>
-              
-                <Link to="/hamburguesas" style={{ textDecoration: 'none' }}>
-                    <Button className={classes.button}>Hamburguesas</Button>
-                </Link>
+              <Button 
+                onClick={() => navegarA(PAGE_HAMBURGUESAS)} className={classes.button}
+              >
+                Hamburguesas
+              </Button>
+                
+
                 <Link to="/papas" style={{ textDecoration: 'none' }}>
                     <Button className={classes.button}>Papas</Button>
                 </Link>
@@ -138,11 +155,18 @@ export default function ComplexGrid() {
             <Button className={classes.siguiente} variant="outlined">Siguiente</Button>
             </Link>
       </div>
-        {page === PAGE_PRODUCTOS && (
-            <Promociones addToCart={addToCart} />
+        {page === PAGE_PROMOCIONES && (
+            <Promociones addToCartPromo={addToCartPromo} />
+        )}
+        {page === PAGE_HAMBURGUESAS && (
+            <Hamburguesas addToCartBurger={addToCartBurger} />
         )}
         {page === PAGE_CART && (
-          <Cart cart={cart} removeFromCart={removeFromCart} />
+          <Cart 
+            cart={cart} 
+            removePromoCart={removePromoCart}
+            removeBurgerCart={removeBurgerCart}
+          />
         )}
     </section>
   );
