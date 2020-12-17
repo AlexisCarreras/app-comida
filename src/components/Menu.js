@@ -36,7 +36,7 @@ const Menu = () => {
                         <CardMenu/>
                     </div>
                     <Typography className={classes.subtitle1} variant="subtitle1" gutterBottom>
-                        Nota: Puedes agregar al carrito y volver a otra categoría, no se perderá lo agregado.
+                        Nota: Puedes agregar al carrito e ir a otra categoría, no se perderá lo agregado.
                     </Typography>
                     <Footer />
 

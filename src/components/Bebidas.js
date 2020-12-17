@@ -73,25 +73,25 @@ export default function Bebidas({ addToCartBebidas }) {
       {
         nombre: 'Agua',
         descripcion: 'Botella (vidrio) de agua mineral de 450ml',
-        precio: '$50',
+        precio: 50,
         img: 'https://images.unsplash.com/photo-1546498158-7478a4cd3380?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80',
       },
       {
         nombre: 'Coca Cola',
         descripcion: 'Botella (vidrio) de Coca-Cola de 450ml',
-        precio: '$70',
+        precio: 70,
         img: 'https://images.unsplash.com/photo-1561758033-48d52648ae8b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
       },
       {
         nombre: 'Agua Tónica',
         descripcion: 'Lata de agua tónica de 450ml (o gaseosas Fanta o Sprite)',
-        precio: '$65',
+        precio: 65,
         img: 'https://images.unsplash.com/photo-1581006852262-e4307cf6283a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80',
       },
       {
         nombre: 'Cerveza',
         descripcion: 'Lata de cerveza Old Jamaica de 450ml',
-        precio: '$75',
+        precio: 75,
         img: 'https://images.unsplash.com/photo-1556030366-f4ec30b98e23?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=80',
       },  
     ]);
@@ -172,7 +172,7 @@ export default function Bebidas({ addToCartBebidas }) {
                 </Grid>
               </Grid>
               <Grid item>
-                <Typography variant="subtitle1">{producto.precio}</Typography>
+                <Typography variant="subtitle1">${producto.precio}</Typography>
               </Grid>
             </Grid>
           </Grid>

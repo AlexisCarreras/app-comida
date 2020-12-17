@@ -67,7 +67,7 @@ const Login = ({ history }) => {
       try {
         await authentication
           .signInWithEmailAndPassword(email.value, password.value);
-        history.push("/");
+        history.push("/productos");
       } catch (error) {
         alert(error);
       }

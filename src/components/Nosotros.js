@@ -41,7 +41,7 @@ const Nosotros = () => {
             <Typography gutterBottom variant="body1" className= {classes.txt}> 
                 Desarrollamos aplicaciones para locales de comidas.<br/>
                 <strong>Comida Fácil </strong> es un app para realizar pedidos online que consta de un registro e inicio de sesión para tus clientes, una galería, un menú donde vas a tener las categorías que creas necesarias y un navegador para recorrerlas.<br/>
-                Además de poder realizar el pago del pedido de forma online.
+                Además de poder realizar el pago del pedido tanto en efectivo a la hora de la entrega como también de forma online.
             </Typography>
         </div>
         <Footer />

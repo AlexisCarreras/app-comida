@@ -73,25 +73,25 @@ export default function Papas({ addToCartPapas }) {
       {
         nombre: 'Papas con verdeo',
         descripcion: '1/4 de papas, con verdeo y sal para agregar',
-        precio: '$100',
+        precio: 100,
         img: 'https://images.unsplash.com/photo-1529589510304-b7e994a92f60?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
       },
       {
         nombre: 'Papas con Salsa',
         descripcion: '1/4 de papas condimentadas y salsa de tomate',
-        precio: '$115',
+        precio: 115,
         img: 'https://images.unsplash.com/photo-1518013431117-eb1465fa5752?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
       },
       {
         nombre: 'Papas picantes',
         descripcion: '1/4 de papas con condimento picante',
-        precio: '$105',
+        precio: 105,
         img: 'https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80',
       },
       {
         nombre: 'Papas Simples',
         descripcion: '1/4 de papas simples y sal para agregar',
-        precio: '$90',
+        precio: 90,
         img: 'https://images.unsplash.com/photo-1500751891669-23b2f9577d86?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
       },  
     ]);
@@ -172,7 +172,7 @@ export default function Papas({ addToCartPapas }) {
                 </Grid>
               </Grid>
               <Grid item>
-                <Typography variant="subtitle1">{producto.precio}</Typography>
+                <Typography variant="subtitle1">${producto.precio}</Typography>
               </Grid>
             </Grid>
           </Grid>

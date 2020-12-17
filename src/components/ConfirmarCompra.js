@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles} from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom";
 import { Button } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
@@ -8,8 +8,8 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import Divider from '@material-ui/core/Divider';
 import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
+import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 
 const useStyles =makeStyles((theme) => ({
@@ -69,15 +69,41 @@ const useStyles =makeStyles((theme) => ({
         color: 'black',
         marginBottom: '0.7rem',
     },
+    button: {
+        display: 'block',
+        marginTop: theme.spacing(2),
+    },
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 241,
+        marginTop: '1rem',
+        marginBottom: '2rem',
+    },
+    submit: {
+        backgroundColor: '#89C739',
+        '&:hover': {
+          backgroundColor: '#629F13',
+        },
+    }
 }));
 
 const ConfirmarCompra = () => {
     const classes = useStyles();
-    const [localidad, setLocalidad] = React.useState('');
+
+    const [age, setAge] = React.useState('');
+    const [open, setOpen] = React.useState(false);
 
     const handleChange = (event) => {
-        setLocalidad(event.target.value);
-    }; 
+      setAge(event.target.value);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+  
+    const handleOpen = () => {
+      setOpen(true);
+    };
 
     return (
         <section className="confirmarCompra">
@@ -95,34 +121,35 @@ const ConfirmarCompra = () => {
             </div>
             <div className={classes.separacion}></div>
             <div>
-                <form className={classes.form} className={"form"} noValidate>
+                <form className={"form"} noValidate>
                 <Grid item xs={12}>
-                <Typography variant="subtitle1" className={classes.envio}>
+                <Typography variant="h6" className={classes.envio}>
                     Envío:
                 </Typography>
                 <Divider className={classes.linea}/>
                 <TextField 
                     name="direccion"
                     id="direccion" 
-                    label="Dirección" 
-                    variant="outlined" 
+                    label="Dirección"  
                     required 
                     fullWidth
                 />
                 </Grid>
                 <Grid item xs={12}>
                 <FormControl className={classes.formControl}>
-                    <InputLabel id="demo-simple-select-label">Localidad</InputLabel>
+                    <InputLabel id="demo-controlled-open-select-label">Localidad</InputLabel>
                     <Select
-                    required
-                    labelId="localidad"
-                    id="localidad"
-                    value={ocalidad}
+                    labelId="demo-controlled-open-select-label"
+                    id="demo-controlled-open-select"
+                    open={open}
+                    onClose={handleClose}
+                    onOpen={handleOpen}
+                    value={age}
                     onChange={handleChange}
                     >
-                    <MenuItem value={Merlo}>Merlo</MenuItem>
-                    <MenuItem value={Padua}>Padua</MenuItem>
-                    <MenuItem value={Libertad}>Libertad</MenuItem>
+                    <MenuItem value={10}>Merlo</MenuItem>
+                    <MenuItem value={20}>Padua</MenuItem>
+                    <MenuItem value={30}>Libertad</MenuItem>
                     </Select>
                 </FormControl>
                 </Grid>
@@ -134,7 +161,7 @@ const ConfirmarCompra = () => {
                     color="primary"
                     className={classes.submit}
                 >
-                    Enviar
+                    Guardar
                 </Button>
             </form>
             </div>

@@ -73,25 +73,25 @@ export default function Hamburguesas({ addToCartBurger }) {
       {
         nombre: 'Doble con Cheddar',
         descripcion: 'Doble carne, cheddar derretido, lechuga tomate y cebolla',
-        precio: '$180',
+        precio: 180,
         img: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=602&q=80',
       },
       {
         nombre: 'Doble Bacon',
         descripcion: 'Doble carne, bacon, cheddar y cebolla',
-        precio: '$170',
+        precio: 170,
         img: 'https://images.unsplash.com/photo-1575980726530-4e673bfa0ad8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
       },
       {
         nombre: 'Hamburguesa Doble',
         descripcion: 'Doble carne, cheddar, tomate, y pepino',
-        precio: '$150',
+        precio: 150,
         img: 'https://images.unsplash.com/photo-1572448862527-d3c904757de6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=500&q=80',
       },
       {
         nombre: 'Hamburguesa Completa',
         descripcion: 'Carne, huevo frito, ketchup, lechuga y tomate',
-        precio: '$170',
+        precio: 170,
         img: 'https://images.unsplash.com/photo-1550317138-10000687a72b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=793&q=80',
       },
         
@@ -173,7 +173,7 @@ export default function Hamburguesas({ addToCartBurger }) {
                 </Grid>
               </Grid>
               <Grid item>
-                <Typography variant="subtitle1">{producto.precio}</Typography>
+                <Typography variant="subtitle1">${producto.precio}</Typography>
               </Grid>
             </Grid>
           </Grid>

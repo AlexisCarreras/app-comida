@@ -144,6 +144,10 @@ export default function ComplexGrid() {
     setPage(nextPage);
   };
 
+  const clearCart = () => {
+    setCart([])
+  };
+
   return (
     <section >
       <div className={classes.encabezado}>
@@ -209,6 +213,7 @@ export default function ComplexGrid() {
             removeBurgerCart={removeBurgerCart}
             removePapasCart={removePapasCart}
             removeBebidasCart={removeBebidasCart}
+            clearCart={clearCart}
           />
         )}
     </section>

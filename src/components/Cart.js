@@ -5,6 +5,9 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import { Button } from '@material-ui/core';
+import IconButton from '@material-ui/core/IconButton';
+import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
   productos: {
@@ -35,19 +38,67 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#D8B800',
     }
   },
+  header: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
   total: {
+    marginTop: '1rem',
     marginBottom: '1rem',
+    // marginLeft: '30rem',
+    // marginRight: '30rem',
+    backgroundColor: '#333',
+    color: 'white',
+    borderRadius: '10px',
+    padding: '0.5rem',
+    border: '1.5px solid #eb5e30',
   },
 }))
 
-export default function Cart({ cart, removePromoCart, removeBurgerCart, removePapasCart, removeBebidasCart }){
+export default function Cart({ cart, clearCart, removePromoCart, removeBurgerCart, removePapasCart, removeBebidasCart }){
   const classes = useStyles(); 
+
+  const getTotalSum = () => {
+    return cart.reduce(
+      (sum, { precio }) => sum + precio,
+      0
+    );
+  };
+
+  const productsWhatsapp = cart.map(
+    (product) =>
+          product.nombre + "%20" + "$" + product.precio
+  );
+
+  console.log(productsWhatsapp);
+
+  function getLinkWhastapp() {
+    var url =
+      "https://api.whatsapp.com/send?phone=" +
+      "541121936289" +
+      "&text=" +
+      encodeURIComponent("Mi pedido es: ") +
+      "%0a%0a" +
+      productsWhatsapp +
+      "%0a" +
+      encodeURIComponent("El total es: $" + getTotalSum());
+
+    return window.open(url);
+  }
 
   return (
     <>
-      <Typography className={classes.total} variant="body2" gutterBottom>
-        Total: 
+      <div className={classes.header}>
+      <IconButton onClick={clearCart}>
+        <DeleteIcon fontSize="large"/>
+      </IconButton>
+      <Typography className={classes.total} variant="h6" gutterBottom>
+         Total: ${getTotalSum()}
       </Typography>
+      <IconButton onClick={() => getLinkWhastapp()}>
+        <WhatsAppIcon fontSize="large"/>
+      </IconButton>
+      </div>
       <div className={classes.productos}>
       {cart.map((producto, index) => (
         <div className={classes.producto} key={index}>
@@ -88,7 +139,7 @@ export default function Cart({ cart, removePromoCart, removeBurgerCart, removePa
               </Grid>
             </Grid>
             <Grid item>
-              <Typography variant="subtitle1">{producto.precio}</Typography>
+              <Typography variant="subtitle1">${producto.precio}</Typography>
             </Grid>
           </Grid>
         </Grid>

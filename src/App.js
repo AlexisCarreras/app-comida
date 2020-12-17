@@ -35,7 +35,7 @@ function App() {
           <Route exact path="/registrate" component={Registrarse}/>
           <Route exact path="/iniciar-sesion" component={Login}/>
 
-          <Route exact path="/productos" component={Productos}/>
+          <PrivateRoute exact path="/productos" component={Productos}/>
           <Route exact path="/hamburguesas" component={Hamburguesas}/>
           <Route exact path="/papas" component={Papas}/>
           <Route exact path="/bebidas" component={Bebidas}/>
