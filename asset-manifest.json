@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/app-comida/static/css/main.27326dc5.chunk.css",
-    "main.js": "/app-comida/static/js/main.565d6583.chunk.js",
-    "main.js.map": "/app-comida/static/js/main.565d6583.chunk.js.map",
-    "runtime-main.js": "/app-comida/static/js/runtime-main.dc45c99c.js",
-    "runtime-main.js.map": "/app-comida/static/js/runtime-main.dc45c99c.js.map",
-    "static/js/2.0bed3739.chunk.js": "/app-comida/static/js/2.0bed3739.chunk.js",
-    "static/js/2.0bed3739.chunk.js.map": "/app-comida/static/js/2.0bed3739.chunk.js.map",
-    "static/js/3.c9d7dcad.chunk.js": "/app-comida/static/js/3.c9d7dcad.chunk.js",
-    "static/js/3.c9d7dcad.chunk.js.map": "/app-comida/static/js/3.c9d7dcad.chunk.js.map",
-    "index.html": "/app-comida/index.html",
-    "static/css/main.27326dc5.chunk.css.map": "/app-comida/static/css/main.27326dc5.chunk.css.map",
-    "static/js/2.0bed3739.chunk.js.LICENSE.txt": "/app-comida/static/js/2.0bed3739.chunk.js.LICENSE.txt",
-    "static/media/Comida Fácil.1be81aa5.png": "/app-comida/static/media/Comida Fácil.1be81aa5.png",
-    "static/media/burger.ff2d5ece.png": "/app-comida/static/media/burger.ff2d5ece.png",
-    "static/media/index.css": "/app-comida/static/media/vertical2.b61062ff.jpg"
+    "main.css": "/comida-facil/static/css/main.b0430ff7.chunk.css",
+    "main.js": "/comida-facil/static/js/main.98b25d68.chunk.js",
+    "main.js.map": "/comida-facil/static/js/main.98b25d68.chunk.js.map",
+    "runtime-main.js": "/comida-facil/static/js/runtime-main.cd5f1ecf.js",
+    "runtime-main.js.map": "/comida-facil/static/js/runtime-main.cd5f1ecf.js.map",
+    "static/js/2.700ac439.chunk.js": "/comida-facil/static/js/2.700ac439.chunk.js",
+    "static/js/2.700ac439.chunk.js.map": "/comida-facil/static/js/2.700ac439.chunk.js.map",
+    "static/js/3.a58d4e55.chunk.js": "/comida-facil/static/js/3.a58d4e55.chunk.js",
+    "static/js/3.a58d4e55.chunk.js.map": "/comida-facil/static/js/3.a58d4e55.chunk.js.map",
+    "index.html": "/comida-facil/index.html",
+    "static/css/main.b0430ff7.chunk.css.map": "/comida-facil/static/css/main.b0430ff7.chunk.css.map",
+    "static/js/2.700ac439.chunk.js.LICENSE.txt": "/comida-facil/static/js/2.700ac439.chunk.js.LICENSE.txt",
+    "static/media/Comida Fácil.1be81aa5.png": "/comida-facil/static/media/Comida Fácil.1be81aa5.png",
+    "static/media/burger.ff2d5ece.png": "/comida-facil/static/media/burger.ff2d5ece.png",
+    "static/media/index.css": "/comida-facil/static/media/vertical2.b61062ff.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.dc45c99c.js",
-    "static/js/2.0bed3739.chunk.js",
-    "static/css/main.27326dc5.chunk.css",
-    "static/js/main.565d6583.chunk.js"
+    "static/js/runtime-main.cd5f1ecf.js",
+    "static/js/2.700ac439.chunk.js",
+    "static/css/main.b0430ff7.chunk.css",
+    "static/js/main.98b25d68.chunk.js"
   ]
 }
